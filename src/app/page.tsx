@@ -19,7 +19,7 @@ import {
 } from 'lucide-react';
 import GalleryGrid from '@/components/GalleryGrid';
 import { artworkItems } from '@/data/artwork';
-import { OceanHero } from '@/components/ui/aurora-hero-bg-2';
+import { Hero } from '@/components/ui/hero';
 
 const trustedBy = [
   'BBC',
@@ -280,12 +280,14 @@ export default function HomePage() {
   return (
     <>
       {/* ═══════════════════════ HERO ═══════════════════════ */}
-      <OceanHero>
-        <div className="max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <Hero>
+        <div className="max-w-7xl mx-auto px-6 pt-32 pb-20 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-semibold tracking-wider uppercase"
-              style={{ background: 'var(--gold-dim)', border: '1px solid var(--border-gold)', color: 'var(--gold)' }}>
+            <div
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-semibold tracking-wider uppercase"
+              style={{ background: 'var(--gold-dim)', border: '1px solid var(--border-gold)', color: 'var(--gold)' }}
+            >
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: 'var(--gold)' }} />
               London-Based · Available Worldwide
             </div>
@@ -342,9 +344,6 @@ export default function HomePage() {
             <div
               className="relative rounded-2xl overflow-hidden shadow-2xl"
               style={{
-                width: '420px',
-                maxWidth: '100%',
-                aspectRatio: '4/5',
                 border: '1px solid var(--border)',
                 boxShadow: '0 32px 80px rgba(0,0,0,0.6), 0 0 0 1px var(--border)',
               }}
@@ -352,10 +351,10 @@ export default function HomePage() {
               <Image
                 src="/TommyCopyright20251216_174543.jpg"
                 alt="Tommy Lee — Mötley Crüe caricature by Nick Bronowski"
-                fill
-                className="object-cover"
+                width={420}
+                height={525}
+                className="object-cover block"
                 priority
-                sizes="420px"
               />
               <div
                 className="absolute inset-0"
@@ -390,12 +389,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-50">
-          <ChevronDown size={20} style={{ color: 'var(--gold)' }} />
-        </div>
-      </OceanHero>
+      </Hero>
 
       {/* ═══════════════════════ TRUSTED BY ═══════════════════════ */}
       <section
@@ -413,7 +407,7 @@ export default function HomePage() {
             {trustedBy.map((brand) => (
               <span
                 key={brand}
-                className="text-sm font-semibold tracking-wide transition-colors duration-200"
+                className="text-sm font-semibold tracking-wide"
                 style={{ color: 'var(--text-muted)' }}
               >
                 {brand}
@@ -429,19 +423,16 @@ export default function HomePage() {
           {/* Image */}
           <div className="relative">
             <div
-              className="relative rounded-2xl overflow-hidden"
-              style={{ aspectRatio: '4/5', border: '1px solid var(--border)' }}
+              className="rounded-2xl overflow-hidden"
+              style={{ border: '1px solid var(--border)' }}
             >
               <Image
-                src="/TommyLeeDeadmaus220260314_133632.jpg"
-                alt="Tommy Lee with his commissioned caricature by Nick Bronowski"
-                fill
-                className="object-cover"
+                src="/TommyCopyright20251216_174543.jpg"
+                alt="Nick Bronowski caricature artwork"
+                width={600}
+                height={750}
+                className="object-cover w-full block"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-              />
-              <div
-                className="absolute inset-0"
-                style={{ background: 'linear-gradient(to top, rgba(8,8,8,0.4) 0%, transparent 60%)' }}
               />
             </div>
             {/* Stat badge */}
@@ -580,8 +571,7 @@ export default function HomePage() {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background:
-              'radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 70%)',
           }}
         />
         <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
