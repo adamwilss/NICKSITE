@@ -19,6 +19,7 @@ import {
 } from 'lucide-react';
 import GalleryGrid from '@/components/GalleryGrid';
 import { artworkItems } from '@/data/artwork';
+import { OceanHero } from '@/components/ui/aurora-hero-bg-2';
 
 const trustedBy = [
   'BBC',
@@ -279,24 +280,8 @@ export default function HomePage() {
   return (
     <>
       {/* ═══════════════════════ HERO ═══════════════════════ */}
-      <section
-        className="relative min-h-screen flex items-center overflow-hidden"
-        style={{
-          background:
-            'radial-gradient(ellipse at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 60%), var(--bg)',
-        }}
-      >
-        {/* Background grid */}
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
-          }}
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <OceanHero>
+        <div className="max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left */}
           <div>
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-semibold tracking-wider uppercase"
@@ -410,7 +395,7 @@ export default function HomePage() {
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-50">
           <ChevronDown size={20} style={{ color: 'var(--gold)' }} />
         </div>
-      </section>
+      </OceanHero>
 
       {/* ═══════════════════════ TRUSTED BY ═══════════════════════ */}
       <section
