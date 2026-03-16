@@ -97,16 +97,16 @@ export default function GalleryGrid({ items, showFilters = true }: GalleryGridPr
       )}
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {filtered.map((item, index) => (
           <button
             key={item.id}
             onClick={() => openLightbox(index)}
-            className="group relative overflow-hidden rounded-xl text-left focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
+            className="group relative overflow-hidden rounded-2xl text-left focus:outline-none focus:ring-2 focus:ring-[var(--gold)]"
             style={{
               background: 'var(--card)',
               border: '1px solid var(--border)',
-              aspectRatio: '4/5',
+              aspectRatio: '3/4',
             }}
           >
             <Image
@@ -114,7 +114,7 @@ export default function GalleryGrid({ items, showFilters = true }: GalleryGridPr
               alt={item.title}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
             {/* Overlay */}
             <div

@@ -67,7 +67,7 @@ export default function GalleryPage() {
     <>
       {/* Page Header */}
       <section className="page-header">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 sm:px-10 text-center">
           <div className="section-label mb-4">Portfolio</div>
           <h1
             style={{
@@ -88,7 +88,7 @@ export default function GalleryPage() {
 
       {/* Gallery */}
       <section className="py-16" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <GalleryGrid items={artworkItems} showFilters={true} />
         </div>
       </section>
@@ -98,7 +98,7 @@ export default function GalleryPage() {
         className="py-24"
         style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
             <div className="section-label mb-4">Testimonials</div>
             <h2
@@ -141,7 +141,7 @@ export default function GalleryPage() {
 
       {/* FAQ */}
       <section className="py-24" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-12">
             <div className="section-label mb-4">Commissions</div>
             <h2
@@ -173,7 +173,7 @@ export default function GalleryPage() {
               'radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 70%)',
           }}
         />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto px-6 sm:px-10 text-center">
           <h2
             className="mb-4"
             style={{

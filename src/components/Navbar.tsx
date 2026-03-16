@@ -52,7 +52,7 @@ export default function Navbar() {
           backdropFilter: scrolled ? 'blur(20px)' : 'none',
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="group flex flex-col leading-none">
             <span

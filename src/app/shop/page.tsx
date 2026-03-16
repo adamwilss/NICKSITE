@@ -372,7 +372,7 @@ export default function ShopPage() {
     <>
       {/* Page Header */}
       <section className="page-header">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 sm:px-10 text-center">
           <div className="section-label mb-4">Services & Commissions</div>
           <h1
             style={{
@@ -393,7 +393,7 @@ export default function ShopPage() {
 
       {/* Products Grid */}
       <section className="py-24" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
             <div className="section-label mb-4">Services</div>
             <h2
@@ -487,7 +487,7 @@ export default function ShopPage() {
         className="py-24"
         style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
             <div className="section-label mb-4">Pricing</div>
             <h2
@@ -566,7 +566,7 @@ export default function ShopPage() {
 
       {/* FAQ */}
       <section className="py-24" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-3xl mx-auto px-6">
+        <div className="max-w-3xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-12">
             <div className="section-label mb-4">Questions</div>
             <h2
@@ -589,7 +589,7 @@ export default function ShopPage() {
         className="py-24"
         style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
             <div className="section-label mb-4">Commission Enquiry</div>
             <h2
@@ -621,7 +621,7 @@ export default function ShopPage() {
         className="py-16"
         style={{ background: '#050505', borderTop: '1px solid var(--border)' }}
       >
-        <div className="max-w-xl mx-auto px-6 text-center">
+        <div className="max-w-xl mx-auto px-6 sm:px-10 text-center">
           <h3
             className="mb-2"
             style={{ fontFamily: 'var(--font-heading)', fontSize: '1.5rem', color: 'var(--text)' }}

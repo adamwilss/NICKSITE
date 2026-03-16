@@ -72,7 +72,7 @@ export default function AboutPage() {
     <>
       {/* Page Header */}
       <section className="page-header">
-        <div className="max-w-4xl mx-auto px-6 text-center">
+        <div className="max-w-4xl mx-auto px-6 sm:px-10 text-center">
           <div className="section-label mb-4">The Artist</div>
           <h1
             style={{
@@ -94,18 +94,17 @@ export default function AboutPage() {
 
       {/* Bio Section */}
       <section className="py-24" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Image */}
           <div className="relative lg:sticky lg:top-28">
-            <div
-              className="relative rounded-2xl overflow-hidden"
-              style={{ aspectRatio: '4/5', border: '1px solid var(--border)' }}
-            >
+            <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
               <Image
                 src="/TommyLeeDeadmaus220260314_133632.jpg"
                 alt="Nick Bronowski with Tommy Lee backstage at Wembley Arena"
-                fill
-                className="object-cover"
+                width={640}
+                height={800}
+                className="block w-full"
+                style={{ objectFit: 'cover' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
@@ -174,7 +173,7 @@ export default function AboutPage() {
         className="py-16"
         style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
       >
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto px-6 sm:px-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {stats.map(({ value, label }) => (
               <div key={label}>
@@ -195,7 +194,7 @@ export default function AboutPage() {
 
       {/* Features */}
       <section className="py-24" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
             <div className="section-label mb-4">What Makes Nick Different</div>
             <h2
@@ -232,7 +231,7 @@ export default function AboutPage() {
         className="py-24"
         style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}
       >
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
             <div>
               <div className="section-label mb-4">Selected Works</div>
@@ -257,7 +256,7 @@ export default function AboutPage() {
 
       {/* Testimonials */}
       <section className="py-24" style={{ background: 'var(--bg)' }}>
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
           <div className="text-center mb-14">
             <div className="section-label mb-4">Testimonials</div>
             <h2
@@ -314,7 +313,7 @@ export default function AboutPage() {
               'radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.1) 0%, transparent 70%)',
           }}
         />
-        <div className="relative z-10 max-w-3xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-3xl mx-auto px-6 sm:px-10 text-center">
           <h2
             className="mb-4"
             style={{
