@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useEffect } from 'react';
-import { motion, useAnimate, stagger } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import Floating, { FloatingElement } from '@/components/ui/parallax-floating';
 
@@ -48,7 +48,7 @@ export function OceanHero({
       aria-label="Hero section"
     >
       {/* Gold Aurora Background */}
-      <div className="absolute inset-0 overflow-hidden opacity-30" aria-hidden="true">
+      <div className="absolute inset-0 overflow-hidden opacity-[0.12]" aria-hidden="true">
         {/* Slow drifting gold gradient blobs */}
         <motion.div
           className="absolute inset-[-100%]"
@@ -56,11 +56,11 @@ export function OceanHero({
             background: `
               repeating-linear-gradient(
                 100deg,
-                #c9a84c 10%,
-                #b8942a 15%,
-                #e2cc8a 20%,
-                #c9a84c 25%,
-                #7a6530 30%
+                rgba(201,168,76,0.8) 10%,
+                rgba(184,148,42,0.5) 15%,
+                rgba(226,204,138,0.7) 20%,
+                rgba(201,168,76,0.8) 25%,
+                rgba(122,101,48,0.4) 30%
               )
             `,
             backgroundSize: '300% 100%',
@@ -70,41 +70,6 @@ export function OceanHero({
             backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
           }}
           transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
-        />
-        {/* Shimmer overlay */}
-        <motion.div
-          className="absolute inset-[-10px]"
-          style={{
-            background: `
-              repeating-linear-gradient(
-                100deg,
-                rgba(201,168,76,0.08) 0%,
-                rgba(201,168,76,0.08) 7%,
-                transparent 10%,
-                transparent 12%,
-                rgba(201,168,76,0.08) 16%
-              ),
-              repeating-linear-gradient(
-                100deg,
-                #c9a84c 10%,
-                #b8942a 15%,
-                #e2cc8a 20%,
-                #c9a84c 25%,
-                #7a6530 30%
-              )
-            `,
-            backgroundSize: '200%, 100%',
-            backgroundPosition: '50% 50%, 50% 50%',
-            mixBlendMode: 'soft-light',
-          }}
-          animate={{
-            backgroundPosition: [
-              '50% 50%, 50% 50%',
-              '100% 50%, 150% 50%',
-              '50% 50%, 50% 50%',
-            ],
-          }}
-          transition={{ duration: 17, repeat: Infinity, ease: 'linear' }}
         />
       </div>
 
