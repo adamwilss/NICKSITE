@@ -1,8 +1,22 @@
 'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect } from 'react';
+import { motion, useAnimate, stagger } from 'framer-motion';
 import { cn } from '@/lib/utils';
+import Floating, { FloatingElement } from '@/components/ui/parallax-floating';
+
+// Nick's actual artwork used as floating background elements
+const floatingArtwork = [
+  { src: '/CharlotteHawkins.Copyright.jpg',         alt: 'Charlotte Hawkins caricature', depth: 0.5,  className: 'top-[8%]  left-[5%]',  size: 'w-24 h-24 md:w-32 md:h-32' },
+  { src: '/JonSnow.Copyright.jpg',                  alt: 'Jon Snow caricature',          depth: 1,    className: 'top-[6%]  left-[28%]', size: 'w-20 h-20 md:w-28 md:h-28' },
+  { src: '/RockitCopyright.jpg',                    alt: 'Rock-It Logistics commission', depth: 2,    className: 'top-[3%]  left-[62%]', size: 'w-32 h-44 md:w-44 md:h-56' },
+  { src: '/DalaiCopyright (1).jpg',                 alt: 'Dalai Lama portrait',          depth: 1,    className: 'top-[2%]  left-[85%]', size: 'w-24 h-28 md:w-32 md:h-40' },
+  { src: '/LordSacks.jpg',                          alt: 'Rabbi Lord Sacks',             depth: 1,    className: 'top-[42%] left-[1%]',  size: 'w-28 h-28 md:w-36 md:h-36' },
+  { src: '/PhilSpencer.Copyright.jpg',              alt: 'Phil Spencer caricature',      depth: 0.8,  className: 'top-[45%] left-[88%]', size: 'w-24 h-24 md:w-32 md:h-32' },
+  { src: '/ItalyCopyright.jpg',                     alt: 'Tuscan winemaker commission',  depth: 1.5,  className: 'top-[68%] left-[8%]',  size: 'w-28 h-36 md:w-36 md:h-48' },
+  { src: '/SwissCopyright.jpg',                     alt: 'Swiss family commission',      depth: 2,    className: 'top-[72%] left-[78%]', size: 'w-28 h-28 md:w-40 md:h-40' },
+  { src: '/RishiCopyright.jpg',                     alt: 'Rishi Sunak caricature',       depth: 1,    className: 'top-[78%] left-[48%]', size: 'w-20 h-24 md:w-28 md:h-36' },
+];
 
 interface OceanHeroProps {
   title?: string;
@@ -94,12 +108,26 @@ export function OceanHero({
         />
       </div>
 
+      {/* Floating artwork images */}
+      <Floating sensitivity={-0.6} easingFactor={0.04} className="overflow-hidden opacity-25 pointer-events-none">
+        {floatingArtwork.map((item) => (
+          <FloatingElement key={item.src} depth={item.depth} className={item.className}>
+            <img
+              src={item.src}
+              alt={item.alt}
+              className={cn(item.size, 'object-cover rounded-lg shadow-2xl')}
+              style={{ border: '1px solid rgba(201,168,76,0.2)' }}
+            />
+          </FloatingElement>
+        ))}
+      </Floating>
+
       {/* Vignette — pulls edges back to dark */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'radial-gradient(ellipse at center, transparent 0%, rgba(8,8,8,0.85) 100%)',
+            'radial-gradient(ellipse at center, transparent 10%, rgba(8,8,8,0.88) 75%)',
         }}
         aria-hidden="true"
       />
