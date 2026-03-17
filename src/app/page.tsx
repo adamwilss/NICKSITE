@@ -213,7 +213,7 @@ export default function HomePage() {
                 height={180}
                 priority
                 className="object-contain"
-                style={{ height: '90px', width: 'auto', mixBlendMode: 'screen' }}
+                style={{ height: '130px', width: 'auto', mixBlendMode: 'screen' }}
               />
             </div>
 

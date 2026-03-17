@@ -5,6 +5,8 @@ import { ArrowRight, Star } from 'lucide-react';
 import GalleryGrid from '@/components/GalleryGrid';
 import { artworkItems } from '@/data/artwork';
 import { Component as EtheralShadow } from '@/components/ui/etheral-shadow';
+import { GlowingShadow } from '@/components/ui/glowing-shadow';
+import { FadeIn, FadeInStagger, FadeInItem } from '@/components/ui/fade-in';
 
 const celebrityEncounters = artworkItems.filter(
   (item) =>
@@ -89,6 +91,17 @@ export default function AboutPage() {
         </div>
         <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(180deg, rgba(8,8,8,0.35) 0%, var(--bg) 100%)' }} />
         <div className="max-w-4xl mx-auto px-6 sm:px-10 text-center relative z-10">
+          <div className="flex justify-center mb-6">
+            <Image
+              src="/signature.png"
+              alt="Nick Bronowski"
+              width={340}
+              height={170}
+              priority
+              className="object-contain"
+              style={{ height: '110px', width: 'auto', mixBlendMode: 'screen' }}
+            />
+          </div>
           <div className="section-label mb-4">The Artist</div>
           <h1
             style={{
@@ -113,7 +126,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Image */}
           <div className="relative lg:sticky lg:top-28">
-            <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+            <GlowingShadow className="block w-full">
               <Image
                 src="/TommyLeeDeadmaus220260314_133632.jpg"
                 alt="Nick Bronowski with Tommy Lee backstage at Wembley Arena"
@@ -124,7 +137,7 @@ export default function AboutPage() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 priority
               />
-            </div>
+            </GlowingShadow>
           </div>
 
           {/* Bio text */}
@@ -190,9 +203,9 @@ export default function AboutPage() {
         style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
       >
         <div className="max-w-5xl mx-auto px-6 sm:px-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <FadeInStagger className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {stats.map(({ value, label }) => (
-              <div key={label}>
+              <FadeInItem key={label}>
                 <div
                   className="text-4xl font-bold mb-1"
                   style={{ fontFamily: 'var(--font-heading)', color: 'var(--gold)' }}
@@ -202,9 +215,9 @@ export default function AboutPage() {
                 <div className="text-sm" style={{ color: 'var(--text-muted)' }}>
                   {label}
                 </div>
-              </div>
+              </FadeInItem>
             ))}
-          </div>
+          </FadeInStagger>
         </div>
       </section>
 
@@ -223,9 +236,9 @@ export default function AboutPage() {
               Art With Character
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {features.map(({ title, description }) => (
-              <div key={title} className="card p-8">
+              <FadeInItem key={title} className="card p-8">
                 <div className="w-8 h-0.5 mb-5" style={{ background: 'var(--gold)' }} />
                 <h3
                   className="mb-3 text-xl"
@@ -236,9 +249,9 @@ export default function AboutPage() {
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
                   {description}
                 </p>
-              </div>
+              </FadeInItem>
             ))}
-          </div>
+          </FadeInStagger>
         </div>
       </section>
 

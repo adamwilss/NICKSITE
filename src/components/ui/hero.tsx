@@ -39,6 +39,7 @@ export function Hero({ children }: { children: React.ReactNode }) {
         style={{
           background: 'radial-gradient(ellipse 75% 55% at 50% 50%, rgba(201,168,76,0.28) 0%, rgba(201,168,76,0.08) 45%, transparent 70%)',
           animation: 'hero-pulse 3.8s ease-in-out infinite',
+          willChange: 'transform, opacity',
         }}
       />
 
@@ -53,6 +54,7 @@ export function Hero({ children }: { children: React.ReactNode }) {
           background: 'radial-gradient(ellipse at center, rgba(201,168,76,0.12) 0%, transparent 65%)',
           animation: 'hero-pulse-slow 7s ease-in-out infinite',
           filter: 'blur(40px)',
+          willChange: 'transform, opacity',
         }}
       />
 
