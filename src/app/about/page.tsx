@@ -8,11 +8,11 @@ import { artworkItems } from '@/data/artwork';
 export const metadata: Metadata = {
   title: 'About Nick Bronowski',
   description:
-    'Meet Nick Bronowski — master caricaturist with 20+ years of experience, 5,000+ caricatures drawn, and a client list that includes rock legends, prime ministers, and global corporations.',
+    'Meet Nick Bronowski — master caricaturist with 30+ years of experience, 5,000+ caricatures drawn, and a client list that includes rock legends, prime ministers, and global corporations.',
 };
 
 const stats = [
-  { value: '20+', label: 'Years Experience' },
+  { value: '30+', label: 'Years Experience' },
   { value: '5,000+', label: 'Caricatures Drawn' },
   { value: '300+', label: 'Events Worldwide' },
   { value: '12', label: 'Countries' },
@@ -32,7 +32,7 @@ const features = [
   {
     title: 'True Craftsmanship',
     description:
-      'Every piece is created by hand, with genuine artistic skill. Nick believes in the power of original art — not prints, not digital shortcuts — just pencil, paper, and 20 years of practice.',
+      'Every piece is created by hand, with genuine artistic skill. Nick believes in the power of original art — not prints, not digital shortcuts — just pencil, paper, and 30 years of practice.',
   },
   {
     title: 'A Gentleman Artist',
@@ -125,7 +125,7 @@ export default function AboutPage() {
             </h2>
             <div className="space-y-5 text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
               <p>
-                Nick Bronowski has been creating caricatures professionally for over two decades. What
+                Nick Bronowski has been creating caricatures professionally for over three decades. What
                 began as a childhood obsession with capturing faces — their quirks, their character,
                 their unspoken stories — evolved into one of the UK&apos;s most distinguished caricature
                 practices.

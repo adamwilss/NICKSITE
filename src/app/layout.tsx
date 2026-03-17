@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: '%s | Nick Bronowski',
   },
   description:
-    'London-based master caricaturist with 20+ years of experience. Live event caricatures, celebrity commissions, and bespoke artwork. Available worldwide.',
+    'London-based master caricaturist with 30+ years of experience. Live event caricatures, celebrity commissions, and bespoke artwork. Available worldwide.',
   keywords: [
     'caricaturist',
     'caricature artist',
@@ -26,13 +26,13 @@ export const metadata: Metadata = {
     siteName: 'Nick Bronowski',
     title: 'Nick Bronowski — Master Caricaturist',
     description:
-      'London-based master caricaturist with 20+ years experience. Live events, celebrity commissions, bespoke portraits.',
+      'London-based master caricaturist with 30+ years experience. Live events, celebrity commissions, bespoke portraits.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Nick Bronowski — Master Caricaturist',
     description:
-      'London-based master caricaturist with 20+ years experience. Live events, celebrity commissions, bespoke portraits.',
+      'London-based master caricaturist with 30+ years experience. Live events, celebrity commissions, bespoke portraits.',
   },
 };
 

@@ -181,7 +181,7 @@ export default function HomePage() {
             </div>
 
             <div className="flex flex-wrap gap-8">
-              {[{ value: '20+', label: 'Years Experience' }, { value: '5,000+', label: 'Caricatures Drawn' }, { value: '300+', label: 'Events Worldwide' }].map(({ value, label }) => (
+              {[{ value: '30+', label: 'Years Experience' }, { value: '5,000+', label: 'Caricatures Drawn' }, { value: '300+', label: 'Events Worldwide' }].map(({ value, label }) => (
                 <div key={label}>
                   <div className="text-2xl font-bold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--gold)' }}>{value}</div>
                   <div className="text-xs mt-1" style={{ color: 'var(--text-muted)' }}>{label}</div>
@@ -215,7 +215,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full flex items-center justify-center text-lg" style={{ background: 'var(--gold-dim)' }}>✏️</div>
                   <div>
-                    <div className="font-bold text-sm" style={{ color: 'var(--gold)' }}>20+ Years</div>
+                    <div className="font-bold text-sm" style={{ color: 'var(--gold)' }}>30+ Years</div>
                     <div className="text-xs" style={{ color: 'var(--text-muted)' }}>of Experience</div>
                   </div>
                 </div>
@@ -225,14 +225,22 @@ export default function HomePage() {
         </div>
       </Hero>
 
-      {/* ── TRUSTED BY ── */}
+      {/* ── TRUSTED BY (scrolling marquee) ── */}
       <section style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-        <div className="max-w-7xl mx-auto px-6 sm:px-10 py-10">
+        <div className="py-10 overflow-hidden">
           <p className="text-center text-xs font-semibold tracking-[0.25em] uppercase mb-8" style={{ color: 'var(--text-subtle)' }}>Trusted by</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-            {trustedBy.map((brand) => (
-              <span key={brand} className="text-sm font-semibold tracking-wide" style={{ color: 'var(--text-muted)' }}>{brand}</span>
-            ))}
+          <div className="relative flex">
+            {/* Fade masks */}
+            <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, var(--surface), transparent)' }} />
+            <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, var(--surface), transparent)' }} />
+            <div
+              className="flex gap-x-16 shrink-0 items-center"
+              style={{ animation: 'marquee 28s linear infinite' }}
+            >
+              {[...trustedBy, ...trustedBy].map((brand, i) => (
+                <span key={i} className="text-sm font-semibold tracking-wide whitespace-nowrap" style={{ color: 'var(--text-muted)' }}>{brand}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>

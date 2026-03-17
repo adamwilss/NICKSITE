@@ -1,4 +1,5 @@
 import React from 'react';
+import { Component as EtheralShadow } from '@/components/ui/etheral-shadow';
 
 export function Hero({ children }: { children: React.ReactNode }) {
   return (
@@ -6,16 +7,16 @@ export function Hero({ children }: { children: React.ReactNode }) {
       className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
       style={{ background: 'var(--bg)' }}
     >
-      {/* Subtle radial gold glow */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: `
-            radial-gradient(ellipse 70% 50% at 65% 50%, rgba(201,168,76,0.06) 0%, transparent 70%),
-            radial-gradient(ellipse 40% 40% at 30% 60%, rgba(201,168,76,0.03) 0%, transparent 60%)
-          `,
-        }}
-      />
+      {/* Etheral animated shadow background */}
+      <div className="absolute inset-0 pointer-events-none">
+        <EtheralShadow
+          color="rgba(201, 168, 76, 0.18)"
+          animation={{ scale: 60, speed: 30 }}
+          noise={{ opacity: 0.4, scale: 1 }}
+          sizing="fill"
+        />
+      </div>
+
       {/* Top-edge subtle border glow */}
       <div
         className="absolute top-0 left-0 right-0 h-px"
