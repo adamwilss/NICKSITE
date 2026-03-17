@@ -5,6 +5,12 @@ import { ArrowRight, Star } from 'lucide-react';
 import GalleryGrid from '@/components/GalleryGrid';
 import { artworkItems } from '@/data/artwork';
 
+const celebrityEncounters = artworkItems.filter(
+  (item) =>
+    item.id === 'tommy-lee-deadmau5' ||
+    (item.category === 'event' && item.tags.includes('celebrity'))
+);
+
 export const metadata: Metadata = {
   title: 'About Nick Bronowski',
   description:
@@ -220,6 +226,47 @@ export default function AboutPage() {
                 <p className="text-sm leading-relaxed" style={{ color: 'var(--text-muted)' }}>
                   {description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Celebrity Encounters */}
+      <section
+        className="py-24"
+        style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}
+      >
+        <div className="max-w-7xl mx-auto px-6 sm:px-10">
+          <div className="text-center mb-14">
+            <div className="section-label mb-4">In Good Company</div>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: 'var(--text)' }}>
+              Celebrity <em className="not-italic gradient-text">Encounters</em>
+            </h2>
+            <p className="mt-4 max-w-xl mx-auto text-sm" style={{ color: 'var(--text-muted)' }}>
+              From rock legends to journalists, politicians to TV presenters — Nick has drawn some of the world&apos;s most recognisable faces, in person.
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+            {celebrityEncounters.map((item) => (
+              <div
+                key={item.id}
+                className="relative rounded-xl overflow-hidden group"
+                style={{ aspectRatio: '3/4', border: '1px solid var(--border)' }}
+              >
+                <Image
+                  src={`/${encodeURIComponent(item.filename)}`}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 16vw"
+                />
+                <div
+                  className="absolute inset-0 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{ background: 'linear-gradient(to top, rgba(8,8,8,0.95) 0%, transparent 55%)' }}
+                >
+                  <div className="text-xs font-semibold leading-tight" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text)' }}>{item.title}</div>
+                </div>
               </div>
             ))}
           </div>

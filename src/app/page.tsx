@@ -49,6 +49,12 @@ const faqs = [
 
 const galleryPreview = artworkItems.slice(0, 6);
 
+const celebrityEncounters = artworkItems.filter(
+  (item) =>
+    item.id === 'tommy-lee-deadmau5' ||
+    (item.category === 'event' && item.tags.includes('celebrity'))
+);
+
 /* ═══════════════════════ COMPONENTS ═══════════════════════ */
 
 function FAQAccordion() {
@@ -172,7 +178,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-base sm:text-lg mb-10 leading-relaxed" style={{ color: 'var(--text-muted)' }}>
-              With over 20 years of mastery, Nick Bronowski creates unforgettable live caricatures and bespoke commissioned artwork. From Wembley Arena backstage to charity galas, his art leaves a lasting impression.
+              With over 30 years of mastery, Nick Bronowski creates unforgettable live caricatures and bespoke commissioned artwork. From Wembley Arena backstage to charity galas, his art leaves a lasting impression.
             </p>
 
             <div className="flex flex-wrap gap-4 mb-14">
@@ -274,13 +280,55 @@ export default function HomePage() {
               Two Decades of Artistry, <em className="not-italic gradient-text">One Unforgettable Craft</em>
             </h2>
             <div className="space-y-4 mb-10" style={{ color: 'var(--text-muted)' }}>
-              <p className="leading-relaxed">Nick Bronowski is one of the UK&apos;s most sought-after caricaturists, with over 20 years of experience bringing laughter and lasting memories to events of every scale. From intimate charity galas to major corporate celebrations, his quick wit and artistic precision have made him a firm favourite.</p>
+              <p className="leading-relaxed">Nick Bronowski is one of the UK&apos;s most sought-after caricaturists, with over 30 years of experience bringing laughter and lasting memories to events of every scale. From intimate charity galas to major corporate celebrations, his quick wit and artistic precision have made him a firm favourite.</p>
               <p className="leading-relaxed">His portfolio spans the full spectrum of human achievement — rock legends, prime ministers, cricket groundskeepers, and Tuscan winemakers. Every face tells a story, and Nick tells it with a pencil.</p>
             </div>
             <div className="flex flex-wrap gap-4">
               <Link href="/about" className="btn-gold">Read Full Story <ArrowRight size={15} /></Link>
               <Link href="/#contact" className="btn-outline">Book an Event</Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CELEBRITY ENCOUNTERS ── */}
+      <section style={{ background: 'var(--bg)', borderBottom: '1px solid var(--border)' }}>
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 py-28">
+          <div className="text-center mb-14">
+            <div className="section-label mb-4">Celebrity Encounters</div>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: 'var(--text)' }}>
+              From Wembley Backstage to <em className="not-italic gradient-text">Political Galas</em>
+            </h2>
+            <p className="mt-4 max-w-2xl mx-auto text-sm" style={{ color: 'var(--text-muted)' }}>
+              Over 30 years, Nick has been invited to meet and draw some of the world&apos;s most recognisable faces — in person, face-to-face.
+            </p>
+          </div>
+          <div className="flex gap-5 overflow-x-auto pb-4" style={{ scrollbarWidth: 'thin', scrollbarColor: 'var(--border) transparent' }}>
+            {celebrityEncounters.map((item) => (
+              <div
+                key={item.id}
+                className="relative shrink-0 rounded-2xl overflow-hidden"
+                style={{ width: '220px', aspectRatio: '3/4', border: '1px solid var(--border)' }}
+              >
+                <Image
+                  src={`/${encodeURIComponent(item.filename)}`}
+                  alt={item.title}
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                  sizes="220px"
+                />
+                <div
+                  className="absolute inset-0 flex flex-col justify-end p-4"
+                  style={{ background: 'linear-gradient(to top, rgba(8,8,8,0.92) 0%, transparent 55%)' }}
+                >
+                  <div className="text-xs font-bold tracking-wider uppercase mb-0.5" style={{ color: 'var(--gold)' }}>Celebrity</div>
+                  <div className="text-sm font-semibold leading-tight" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text)' }}>{item.title}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/gallery" className="btn-outline">View Full Gallery <ArrowRight size={15} /></Link>
           </div>
         </div>
       </section>
@@ -354,6 +402,51 @@ export default function HomePage() {
                 <div style={{ borderTop: '1px solid var(--border)', paddingTop: '1.25rem' }}>
                   <div className="font-semibold text-sm" style={{ color: 'var(--text)' }}>{t.name}</div>
                   <div className="text-xs mt-1" style={{ color: 'var(--gold)' }}>{t.role}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── VIDEO ── */}
+      <section style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+        <div className="max-w-7xl mx-auto px-6 sm:px-10 py-28">
+          <div className="text-center mb-14">
+            <div className="section-label mb-4">Nick in Action</div>
+            <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', color: 'var(--text)' }}>
+              Watch the <em className="not-italic gradient-text">Magic Happen</em>
+            </h2>
+            <p className="mt-4 max-w-xl mx-auto text-sm" style={{ color: 'var(--text-muted)' }}>
+              Professional footage of Nick at work — live events, backstage moments, and the full creative process. Video reel coming soon.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {[
+              { label: 'Live at the Races', desc: 'Professional footage of Nick entertaining guests at Newmarket Racecourse — caricatures drawn at speed in a buzzing live environment.' },
+              { label: 'Corporate Event Highlights', desc: 'Nick in action at a major corporate event — watch how quickly a crowd gathers when the pencil starts moving.' },
+            ].map(({ label, desc }) => (
+              <div
+                key={label}
+                className="relative rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center"
+                style={{ aspectRatio: '16/9', background: 'var(--card)', border: '1px solid var(--border)' }}
+              >
+                {/* Play button */}
+                <div
+                  className="w-16 h-16 rounded-full flex items-center justify-center mb-5"
+                  style={{ background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', boxShadow: '0 8px 32px rgba(201,168,76,0.3)' }}
+                >
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M6 4l12 6-12 6V4z" fill="#080808" />
+                  </svg>
+                </div>
+                <div className="text-lg font-semibold mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text)' }}>{label}</div>
+                <p className="text-xs max-w-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>{desc}</p>
+                <div
+                  className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase"
+                  style={{ background: 'var(--gold-dim)', border: '1px solid var(--border-gold)', color: 'var(--gold)' }}
+                >
+                  Coming Soon
                 </div>
               </div>
             ))}
