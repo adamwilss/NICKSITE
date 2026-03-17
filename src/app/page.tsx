@@ -213,7 +213,7 @@ export default function HomePage() {
                 height={180}
                 priority
                 className="object-contain"
-                style={{ height: '130px', width: 'auto', mixBlendMode: 'screen' }}
+                style={{ height: '180px', width: 'auto', mixBlendMode: 'screen', filter: 'drop-shadow(0 0 24px rgba(201,168,76,0.55)) drop-shadow(0 2px 8px rgba(0,0,0,0.6))' }}
               />
             </div>
 

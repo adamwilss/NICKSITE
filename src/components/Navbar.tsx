@@ -63,7 +63,7 @@ export default function Navbar() {
               height={100}
               priority
               className="object-contain transition-opacity duration-200 hover:opacity-80"
-              style={{ height: '62px', width: 'auto', mixBlendMode: 'screen' }}
+              style={{ height: '72px', width: 'auto', mixBlendMode: 'screen', filter: 'drop-shadow(0 0 8px rgba(201,168,76,0.4))' }}
             />
           </Link>
 
