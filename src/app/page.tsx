@@ -22,6 +22,7 @@ import { artworkItems } from '@/data/artwork';
 import { Hero } from '@/components/ui/hero';
 import { Component as EtheralShadow } from '@/components/ui/etheral-shadow';
 import Floating, { FloatingElement } from '@/components/ui/parallax-floating';
+import { GlowingShadow } from '@/components/ui/glowing-shadow';
 
 /* ═══════════════════════ DATA ═══════════════════════ */
 
@@ -240,20 +241,17 @@ export default function HomePage() {
           {/* Right — hero image */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              <div
-                className="rounded-2xl overflow-hidden"
-                style={{ border: '1px solid var(--border)', boxShadow: '0 40px 80px rgba(0,0,0,0.5)' }}
-              >
+              <GlowingShadow>
                 <Image
                   src="/TommyCopyright20251216_174543.jpg"
                   alt="Tommy Lee — Mötley Crüe caricature by Nick Bronowski"
                   width={440}
                   height={550}
                   className="block"
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'cover', boxShadow: '0 40px 80px rgba(0,0,0,0.5)' }}
                   priority
                 />
-              </div>
+              </GlowingShadow>
               {/* Badge */}
               <div
                 className="absolute -bottom-5 -left-5 md:-bottom-6 md:-left-10 px-5 py-3 rounded-xl"
@@ -296,7 +294,7 @@ export default function HomePage() {
       <section style={{ background: 'var(--bg)' }}>
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-28 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           <div className="relative">
-            <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid var(--border)' }}>
+            <GlowingShadow className="block w-full">
               <Image
                 src="/RockitCopyright.jpg"
                 alt="Beatles-themed commission by Nick Bronowski"
@@ -306,7 +304,7 @@ export default function HomePage() {
                 style={{ objectFit: 'cover' }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-            </div>
+            </GlowingShadow>
             <div
               className="absolute -top-5 -right-5 px-6 py-4 rounded-xl text-center"
               style={{ background: 'var(--card)', border: '1px solid var(--border-gold)', boxShadow: '0 12px 32px rgba(0,0,0,0.4)' }}
