@@ -26,12 +26,32 @@ import { GlowingShadow } from '@/components/ui/glowing-shadow';
 
 /* ═══════════════════════ DATA ═══════════════════════ */
 
-const trustedBy = [
-  'BBC', 'The Ritz', 'The Dorchester', 'Four Seasons', 'Soho House', 'The Ivy',
-  'Goldman Sachs', 'Disney', 'Apple', 'Amazon', 'IKEA', 'BMW', 'GM Motors',
-  'Saatchi & Saatchi', 'John Lewis', 'Pinewood Studios', 'House of Commons',
-  'Ministry of Defence', 'Silverstone', 'Newmarket Racecourse', 'Heathrow Airport',
-  "Lord's Cricket Ground", 'Wembley Arena', 'Channel 4', 'Rock-It Logistics',
+const trustedBy: { name: string; logo?: string }[] = [
+  { name: 'BBC',                logo: '/logos/bbc.png' },
+  { name: 'The Ritz' },
+  { name: 'The Dorchester' },
+  { name: 'Four Seasons' },
+  { name: 'Soho House' },
+  { name: 'The Ivy',            logo: '/logos/the-ivy.png' },
+  { name: 'Goldman Sachs',      logo: '/logos/goldman-sachs.png' },
+  { name: 'Disney' },
+  { name: 'Apple' },
+  { name: 'Amazon' },
+  { name: 'IKEA',               logo: '/logos/ikea.jpg' },
+  { name: 'BMW',                logo: '/logos/bmw.png' },
+  { name: 'GM Motors' },
+  { name: 'Saatchi & Saatchi' },
+  { name: 'John Lewis',         logo: '/logos/john-lewis.jpg' },
+  { name: 'Pinewood Studios' },
+  { name: 'House of Commons' },
+  { name: 'Ministry of Defence' },
+  { name: 'Silverstone',        logo: '/logos/silverstone.png' },
+  { name: 'Newmarket Racecourse', logo: '/logos/newmarket.jpg' },
+  { name: 'Heathrow Airport' },
+  { name: "Lord's Cricket Ground" },
+  { name: 'Wembley Arena' },
+  { name: 'Channel 4' },
+  { name: 'Rock-It Logistics' },
 ];
 
 const features = [
@@ -297,12 +317,36 @@ export default function HomePage() {
             <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to right, var(--surface), transparent)' }} />
             <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none" style={{ background: 'linear-gradient(to left, var(--surface), transparent)' }} />
             <div
-              className="flex gap-x-16 shrink-0 items-center"
-              style={{ animation: 'marquee 28s linear infinite' }}
+              className="flex gap-x-14 shrink-0 items-center"
+              style={{ animation: 'marquee 38s linear infinite' }}
             >
-              {[...trustedBy, ...trustedBy].map((brand, i) => (
-                <span key={i} className="text-sm font-semibold tracking-wide whitespace-nowrap" style={{ color: 'var(--text-muted)' }}>{brand}</span>
-              ))}
+              {[...trustedBy, ...trustedBy].map((brand, i) =>
+                brand.logo ? (
+                  <Image
+                    key={i}
+                    src={brand.logo}
+                    alt={brand.name}
+                    width={120}
+                    height={40}
+                    className="object-contain shrink-0"
+                    style={{
+                      height: '34px',
+                      width: 'auto',
+                      maxWidth: '110px',
+                      filter: 'brightness(0) invert(1)',
+                      opacity: 0.55,
+                    }}
+                  />
+                ) : (
+                  <span
+                    key={i}
+                    className="text-sm font-semibold tracking-wide whitespace-nowrap shrink-0"
+                    style={{ color: 'var(--text-subtle)' }}
+                  >
+                    {brand.name}
+                  </span>
+                )
+              )}
             </div>
           </div>
         </div>
