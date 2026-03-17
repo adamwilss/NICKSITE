@@ -234,3 +234,14 @@ select option {
   from { transform: translateX(0); }
   to   { transform: translateX(-50%); }
 }
+
+@keyframes hero-pulse {
+  0%, 100% { opacity: 0.12; transform: scale(1);    }
+  50%       { opacity: 0.5;  transform: scale(1.12); }
+}
+
+@keyframes hero-pulse-slow {
+  0%, 100% { opacity: 0.08; transform: scale(1) rotate(0deg);   }
+  33%       { opacity: 0.35; transform: scale(1.2) rotate(4deg);  }
+  66%       { opacity: 0.2;  transform: scale(0.95) rotate(-3deg); }
+}
