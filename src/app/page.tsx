@@ -25,7 +25,13 @@ import Floating, { FloatingElement } from '@/components/ui/parallax-floating';
 
 /* ═══════════════════════ DATA ═══════════════════════ */
 
-const trustedBy = ['BBC', 'Rock-It Logistics', 'The Dorchester', 'GM Motors', "Lord's Cricket Ground", 'Wembley Arena', 'Channel 4'];
+const trustedBy = [
+  'BBC', 'The Ritz', 'The Dorchester', 'Four Seasons', 'Soho House', 'The Ivy',
+  'Goldman Sachs', 'Disney', 'Apple', 'Amazon', 'IKEA', 'BMW', 'GM Motors',
+  'Saatchi & Saatchi', 'John Lewis', 'Pinewood Studios', 'House of Commons',
+  'Ministry of Defence', 'Silverstone', 'Newmarket Racecourse', 'Heathrow Airport',
+  "Lord's Cricket Ground", 'Wembley Arena', 'Channel 4', 'Rock-It Logistics',
+];
 
 const features = [
   { Icon: Pen, title: 'Traditional Art', description: 'Each caricature is hand-drawn on quality A3 paper — a genuine, tactile keepsake your guests will treasure for years.' },
@@ -35,9 +41,42 @@ const features = [
 ];
 
 const testimonials = [
-  { quote: "Nick was absolutely fantastic at our event. Professional, talented, and the guests couldn't stop talking about their caricatures. We'll definitely book him again.", name: 'BBC Events Team', role: 'Corporate Event, London', stars: 5 },
-  { quote: "The caricature Nick created for me is incredible — he captured everything perfectly. Hand-delivered backstage at Wembley. Totally exceeded my expectations.", name: 'Tommy Lee', role: 'Mötley Crüe', stars: 5 },
-  { quote: 'Nick delivered an absolutely stunning bespoke commission for our corporate retirement gift. The attention to detail and creativity was extraordinary.', name: 'Rock-It Logistics', role: 'Bespoke Commission', stars: 5 },
+  {
+    quote: "Oh my God Nick, these caricatures are AMAZING!!!! WOW! WOW! WOW! You truly are super super talented. Thank you buddy!!!!",
+    name: 'Tommy Lee',
+    role: 'Mötley Crüe — Private Commission',
+    stars: 5,
+  },
+  {
+    quote: "Absolutely 5 out of 5. Nicholas was interested and interesting. Efficient, worked hard, and made the time booked enjoyable and entertaining. He was on time, adaptable, put people at their ease and produced lovely caricatures. I would definitely recommend — I think I have run out of superlatives!",
+    name: 'T. Hussey',
+    role: 'Four Seasons Hotel',
+    stars: 5,
+  },
+  {
+    quote: "Everyone enjoyed meeting Nicholas and having their pictures drawn. I have received comments on how good and friendly he was. He was excellent — a pleasure to have around and a very talented artist!",
+    name: 'J. Gambon',
+    role: 'GM Motors Corporate Event',
+    stars: 5,
+  },
+  {
+    quote: "Nick was so easygoing and the guests absolutely loved him, and loved their caricatures — we should have booked him for longer! 10/10.",
+    name: 'Francesca',
+    role: 'Century Club, London',
+    stars: 5,
+  },
+  {
+    quote: "Not only were his drawings amazing, but he came on time, was really nice and friendly and put everyone at ease. Great value for money — I would absolutely recommend Bronowski to anyone.",
+    name: 'R. Cowburn',
+    role: 'Corporate Fashion Event, London',
+    stars: 5,
+  },
+  {
+    quote: "I just wanted to say thank you for making the party a success. The whole process from booking to arrival was seamless. Everyone commented on the drawings and how good they were. Thanks again!",
+    name: 'S. Mount',
+    role: 'Birthday Party, The Hilton Hotel London',
+    stars: 5,
+  },
 ];
 
 const faqs = [
@@ -279,7 +318,7 @@ export default function HomePage() {
           <div>
             <div className="section-label mb-4">About Nick</div>
             <h2 className="mb-6" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 3vw, 2.8rem)', color: 'var(--text)' }}>
-              Two Decades of Artistry, <em className="not-italic gradient-text">One Unforgettable Craft</em>
+              Three Decades of Artistry, <em className="not-italic gradient-text">One Unforgettable Craft</em>
             </h2>
             <div className="space-y-4 mb-10" style={{ color: 'var(--text-muted)' }}>
               <p className="leading-relaxed">Nick Bronowski is one of the UK&apos;s most sought-after caricaturists, with over 30 years of experience bringing laughter and lasting memories to events of every scale. From intimate charity galas to major corporate celebrations, his quick wit and artistic precision have made him a firm favourite.</p>
@@ -496,38 +535,57 @@ export default function HomePage() {
               Watch the <em className="not-italic gradient-text">Magic Happen</em>
             </h2>
             <p className="mt-4 max-w-xl mx-auto text-sm" style={{ color: 'var(--text-muted)' }}>
-              Professional footage of Nick at work — live events, backstage moments, and the full creative process. Video reel coming soon.
+              Professional footage of Nick entertaining guests at Newmarket Racecourse — caricatures drawn at speed in a buzzing live environment.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {[
-              { label: 'Live at the Races', desc: 'Professional footage of Nick entertaining guests at Newmarket Racecourse — caricatures drawn at speed in a buzzing live environment.' },
-              { label: 'Corporate Event Highlights', desc: 'Nick in action at a major corporate event — watch how quickly a crowd gathers when the pencil starts moving.' },
-            ].map(({ label, desc }) => (
+            {/* Real clip — Newmarket Racecourse */}
+            <a
+              href="https://www.facebook.com/share/r/1ByfV2wu4H/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center group"
+              style={{ aspectRatio: '16/9', background: 'var(--card)', border: '1px solid var(--border-gold)' }}
+            >
               <div
-                key={label}
-                className="relative rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center"
-                style={{ aspectRatio: '16/9', background: 'var(--card)', border: '1px solid var(--border)' }}
+                className="w-16 h-16 rounded-full flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
+                style={{ background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', boxShadow: '0 8px 32px rgba(201,168,76,0.4)' }}
               >
-                {/* Play button */}
-                <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center mb-5"
-                  style={{ background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', boxShadow: '0 8px 32px rgba(201,168,76,0.3)' }}
-                >
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M6 4l12 6-12 6V4z" fill="#080808" />
-                  </svg>
-                </div>
-                <div className="text-lg font-semibold mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text)' }}>{label}</div>
-                <p className="text-xs max-w-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>{desc}</p>
-                <div
-                  className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase"
-                  style={{ background: 'var(--gold-dim)', border: '1px solid var(--border-gold)', color: 'var(--gold)' }}
-                >
-                  Coming Soon
-                </div>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M6 4l12 6-12 6V4z" fill="#080808" />
+                </svg>
               </div>
-            ))}
+              <div className="text-lg font-semibold mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text)' }}>Live at Newmarket Racecourse</div>
+              <p className="text-xs max-w-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>Watch Nick draw at the Jockey Club — tap to view on Facebook</p>
+              <div
+                className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase"
+                style={{ background: 'var(--gold-dim)', border: '1px solid var(--border-gold)', color: 'var(--gold)' }}
+              >
+                Watch Now
+              </div>
+            </a>
+            {/* Second clip — coming soon */}
+            <div
+              className="relative rounded-2xl overflow-hidden flex flex-col items-center justify-center text-center"
+              style={{ aspectRatio: '16/9', background: 'var(--card)', border: '1px solid var(--border)' }}
+            >
+              <div
+                className="w-16 h-16 rounded-full flex items-center justify-center mb-5"
+                style={{ background: 'linear-gradient(135deg, var(--gold), var(--gold-light))', boxShadow: '0 8px 32px rgba(201,168,76,0.3)' }}
+              >
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M6 4l12 6-12 6V4z" fill="#080808" />
+                </svg>
+              </div>
+              <div className="text-lg font-semibold mb-2" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text)' }}>Corporate Event Highlights</div>
+              <p className="text-xs max-w-xs leading-relaxed" style={{ color: 'var(--text-muted)' }}>More footage of Nick at live events — coming soon</p>
+              <div
+                className="absolute top-3 right-3 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase"
+                style={{ background: 'var(--gold-dim)', border: '1px solid var(--border-gold)', color: 'var(--gold)' }}
+              >
+                Coming Soon
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -556,7 +614,7 @@ export default function HomePage() {
               <div className="space-y-6">
                 {[
                   { Icon: Mail, label: 'Email', value: 'hello@nickbronowski.com' },
-                  { Icon: Phone, label: 'Phone', value: '+44 (0) 7XXX XXX XXX' },
+                  { Icon: Phone, label: 'Phone', value: '+44 (0)7968 647 550' },
                   { Icon: MapPin, label: 'Based in', value: 'London, UK — Available Worldwide' },
                 ].map(({ Icon, label, value }) => (
                   <div key={label} className="flex items-start gap-4">
