@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { clsx } from 'clsx';
@@ -53,24 +54,17 @@ export default function Navbar() {
         }}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="group flex flex-col leading-none">
-            <span
-              className="font-bold tracking-wide transition-colors duration-200 group-hover:text-[var(--gold)]"
-              style={{
-                fontFamily: 'var(--font-heading)',
-                fontSize: '1.25rem',
-                color: 'var(--text)',
-              }}
-            >
-              Nick Bronowski
-            </span>
-            <span
-              className="text-[0.65rem] font-semibold tracking-[0.18em] uppercase"
-              style={{ color: 'var(--gold)' }}
-            >
-              Master Caricaturist
-            </span>
+          {/* Logo — signature */}
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/signature.png"
+              alt="Nick Bronowski"
+              width={200}
+              height={100}
+              priority
+              className="object-contain transition-opacity duration-200 hover:opacity-80"
+              style={{ height: '44px', width: 'auto', mixBlendMode: 'screen' }}
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -131,9 +125,14 @@ export default function Navbar() {
         style={{ background: 'var(--surface)', borderLeft: '1px solid var(--border)' }}
       >
         <div className="flex items-center justify-between p-6 border-b" style={{ borderColor: 'var(--border)' }}>
-          <span style={{ fontFamily: 'var(--font-heading)', color: 'var(--gold)', fontSize: '1rem' }}>
-            Nick Bronowski
-          </span>
+          <Image
+            src="/signature.png"
+            alt="Nick Bronowski"
+            width={160}
+            height={80}
+            className="object-contain"
+            style={{ height: '36px', width: 'auto', mixBlendMode: 'screen' }}
+          />
           <button onClick={() => setMobileOpen(false)} style={{ color: 'var(--text-muted)' }}>
             <X size={20} />
           </button>
