@@ -204,16 +204,21 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 sm:px-10 pt-36 pb-24 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Left copy */}
           <div className="max-w-xl">
-            {/* Signature as hero logo */}
-            <div className="mb-6">
+            {/* Signature as hero logo — width-constrained, cropped to just the lettering */}
+            <div className="mb-6" style={{ width: '440px', height: '130px', overflow: 'hidden' }}>
               <Image
                 src="/signature.png"
                 alt="Nick Bronowski"
-                width={360}
-                height={180}
+                width={1024}
+                height={1536}
                 priority
-                className="object-contain"
-                style={{ height: '180px', width: 'auto', mixBlendMode: 'screen', filter: 'drop-shadow(0 0 24px rgba(201,168,76,0.55)) drop-shadow(0 2px 8px rgba(0,0,0,0.6))' }}
+                style={{
+                  width: '440px',
+                  height: 'auto',
+                  marginTop: '-270px',
+                  mixBlendMode: 'screen',
+                  filter: 'drop-shadow(0 0 28px rgba(201,168,76,0.6)) drop-shadow(0 2px 10px rgba(0,0,0,0.7))',
+                }}
               />
             </div>
 

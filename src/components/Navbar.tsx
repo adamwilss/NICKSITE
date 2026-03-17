@@ -54,16 +54,21 @@ export default function Navbar() {
         }}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 flex items-center justify-between">
-          {/* Logo — signature */}
-          <Link href="/" className="flex items-center">
+          {/* Logo — signature, width-constrained crop to just the lettering */}
+          <Link href="/" className="flex items-center transition-opacity duration-200 hover:opacity-75" style={{ width: '190px', height: '54px', overflow: 'hidden' }}>
             <Image
               src="/signature.png"
               alt="Nick Bronowski"
-              width={200}
-              height={100}
+              width={1024}
+              height={1536}
               priority
-              className="object-contain transition-opacity duration-200 hover:opacity-80"
-              style={{ height: '72px', width: 'auto', mixBlendMode: 'screen', filter: 'drop-shadow(0 0 8px rgba(201,168,76,0.4))' }}
+              style={{
+                width: '190px',
+                height: 'auto',
+                marginTop: '-116px',
+                mixBlendMode: 'screen',
+                filter: 'drop-shadow(0 0 10px rgba(201,168,76,0.5))',
+              }}
             />
           </Link>
 
@@ -125,14 +130,15 @@ export default function Navbar() {
         style={{ background: 'var(--surface)', borderLeft: '1px solid var(--border)' }}
       >
         <div className="flex items-center justify-between p-6 border-b" style={{ borderColor: 'var(--border)' }}>
-          <Image
-            src="/signature.png"
-            alt="Nick Bronowski"
-            width={160}
-            height={80}
-            className="object-contain"
-            style={{ height: '36px', width: 'auto', mixBlendMode: 'screen' }}
-          />
+          <div style={{ width: '160px', height: '48px', overflow: 'hidden' }}>
+            <Image
+              src="/signature.png"
+              alt="Nick Bronowski"
+              width={1024}
+              height={1536}
+              style={{ width: '160px', height: 'auto', marginTop: '-98px', mixBlendMode: 'screen' }}
+            />
+          </div>
           <button onClick={() => setMobileOpen(false)} style={{ color: 'var(--text-muted)' }}>
             <X size={20} />
           </button>
