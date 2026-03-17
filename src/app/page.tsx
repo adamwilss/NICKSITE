@@ -373,14 +373,14 @@ export default function HomePage() {
       {/* ── PARALLAX SHOWCASE ── */}
       <section
         className="relative overflow-hidden"
-        style={{ background: 'var(--bg)', minHeight: '720px' }}
+        style={{ background: '#050505', minHeight: '100vh' }}
       >
-        {/* edge fades */}
+        {/* top/bottom edge fades */}
         <div
           className="absolute inset-0 pointer-events-none z-10"
           style={{
             background:
-              'linear-gradient(180deg, var(--bg) 0%, transparent 12%, transparent 88%, var(--bg) 100%)',
+              'linear-gradient(180deg, #050505 0%, transparent 16%, transparent 84%, #050505 100%)',
           }}
         />
         {/* central copy */}
@@ -390,9 +390,9 @@ export default function HomePage() {
             className="mb-5"
             style={{
               fontFamily: 'var(--font-heading)',
-              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+              fontSize: 'clamp(2.4rem, 5vw, 4.2rem)',
               color: 'var(--text)',
-              lineHeight: 1.1,
+              lineHeight: 1.05,
             }}
           >
             Art That <em className="not-italic gradient-text">Speaks</em>
@@ -404,31 +404,31 @@ export default function HomePage() {
             Browse the Gallery <ArrowRight size={15} />
           </Link>
         </div>
-        {/* floating artwork images */}
+        {/* floating artwork — all between 16%–62% top so overflow:hidden never clips them */}
         <Floating sensitivity={-1}>
-          <FloatingElement depth={0.5} className="top-[6%] left-[4%]">
-            <Image src="/TommyCopyright20251216_174543.jpg" alt="Tommy Lee" width={168} height={224} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          <FloatingElement depth={0.5} className="top-[18%] left-[3%]">
+            <Image src="/TommyCopyright20251216_174543.jpg" alt="Tommy Lee" width={190} height={254} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
           </FloatingElement>
-          <FloatingElement depth={1} className="top-[4%] left-[21%]">
-            <Image src="/CharlotteHawkins.Copyright.jpg" alt="Charlotte Hawkins" width={140} height={190} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          <FloatingElement depth={1} className="top-[16%] left-[20%]">
+            <Image src="/CharlotteHawkins.Copyright.jpg" alt="Charlotte Hawkins" width={162} height={216} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
           </FloatingElement>
-          <FloatingElement depth={2} className="top-[2%] left-[61%]">
-            <Image src="/RishiCopyright.jpg" alt="Rishi Sunak" width={176} height={232} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          <FloatingElement depth={2} className="top-[17%] left-[60%]">
+            <Image src="/RishiCopyright.jpg" alt="Rishi Sunak" width={196} height={260} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
           </FloatingElement>
-          <FloatingElement depth={1} className="top-[5%] left-[80%]">
-            <Image src="/DalaiCopyright%20(1).jpg" alt="Dalai Lama" width={152} height={200} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          <FloatingElement depth={1} className="top-[19%] left-[80%]">
+            <Image src="/DalaiCopyright%20(1).jpg" alt="Dalai Lama" width={172} height={228} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
           </FloatingElement>
-          <FloatingElement depth={1.5} className="top-[38%] left-[1%]">
-            <Image src="/JonSnow.Copyright.jpg" alt="Jon Snow" width={160} height={210} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          <FloatingElement depth={1.5} className="top-[44%] left-[1%]">
+            <Image src="/JonSnow.Copyright.jpg" alt="Jon Snow" width={178} height={236} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
           </FloatingElement>
-          <FloatingElement depth={1} className="top-[32%] left-[83%]">
-            <Image src="/RockitCopyright.jpg" alt="Rock-It Beatles" width={168} height={224} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          <FloatingElement depth={1} className="top-[40%] left-[83%]">
+            <Image src="/RockitCopyright.jpg" alt="Rock-It Beatles" width={186} height={248} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
           </FloatingElement>
-          <FloatingElement depth={3} className="top-[62%] left-[7%]">
-            <Image src="/ItalyCopyright.jpg" alt="Tuscan Winemaker" width={184} height={240} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          <FloatingElement depth={2.5} className="top-[56%] left-[5%]">
+            <Image src="/ItalyCopyright.jpg" alt="Tuscan Winemaker" width={196} height={260} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
           </FloatingElement>
-          <FloatingElement depth={1} className="top-[68%] left-[74%]">
-            <Image src="/SwissCopyright.jpg" alt="Swiss Commission" width={176} height={232} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          <FloatingElement depth={1} className="top-[57%] left-[74%]">
+            <Image src="/SwissCopyright.jpg" alt="Swiss Commission" width={192} height={256} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
           </FloatingElement>
         </Floating>
       </section>
@@ -441,14 +441,14 @@ export default function HomePage() {
         {/* Etheral animated background */}
         <div className="absolute inset-0">
           <EtheralShadow
-            color="rgba(201, 168, 76, 0.42)"
-            animation={{ scale: 85, speed: 55 }}
-            noise={{ opacity: 0.55, scale: 1 }}
+            color="rgba(201, 168, 76, 0.75)"
+            animation={{ scale: 95, speed: 70 }}
+            noise={{ opacity: 0.7, scale: 1 }}
             sizing="fill"
           />
         </div>
-        {/* Dark overlay so text stays readable */}
-        <div className="absolute inset-0" style={{ background: 'rgba(8,8,8,0.78)' }} />
+        {/* Overlay — light enough to see the effect, dark enough to read text */}
+        <div className="absolute inset-0" style={{ background: 'rgba(8,8,8,0.48)' }} />
         <div className="relative z-10 max-w-3xl mx-auto px-6 sm:px-10 py-24 text-center">
           <h2 className="mb-5" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 3vw, 2.8rem)', color: 'var(--text)' }}>
             Ready to Make Your Event <em className="not-italic gradient-text">Unforgettable?</em>

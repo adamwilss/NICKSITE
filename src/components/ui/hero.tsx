@@ -10,9 +10,9 @@ export function Hero({ children }: { children: React.ReactNode }) {
       {/* Etheral animated shadow background */}
       <div className="absolute inset-0 pointer-events-none">
         <EtheralShadow
-          color="rgba(201, 168, 76, 0.18)"
-          animation={{ scale: 60, speed: 30 }}
-          noise={{ opacity: 0.4, scale: 1 }}
+          color="rgba(201, 168, 76, 0.32)"
+          animation={{ scale: 75, speed: 45 }}
+          noise={{ opacity: 0.5, scale: 1 }}
           sizing="fill"
         />
       </div>
