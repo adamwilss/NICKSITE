@@ -20,6 +20,8 @@ import {
 import GalleryGrid from '@/components/GalleryGrid';
 import { artworkItems } from '@/data/artwork';
 import { Hero } from '@/components/ui/hero';
+import { Component as EtheralShadow } from '@/components/ui/etheral-shadow';
+import Floating, { FloatingElement } from '@/components/ui/parallax-floating';
 
 /* ═══════════════════════ DATA ═══════════════════════ */
 
@@ -368,9 +370,85 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── PARALLAX SHOWCASE ── */}
+      <section
+        className="relative overflow-hidden"
+        style={{ background: 'var(--bg)', minHeight: '720px' }}
+      >
+        {/* edge fades */}
+        <div
+          className="absolute inset-0 pointer-events-none z-10"
+          style={{
+            background:
+              'linear-gradient(180deg, var(--bg) 0%, transparent 12%, transparent 88%, var(--bg) 100%)',
+          }}
+        />
+        {/* central copy */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-center z-20 px-6">
+          <div className="section-label mb-4">The Portfolio</div>
+          <h2
+            className="mb-5"
+            style={{
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'clamp(2rem, 4vw, 3.5rem)',
+              color: 'var(--text)',
+              lineHeight: 1.1,
+            }}
+          >
+            Art That <em className="not-italic gradient-text">Speaks</em>
+          </h2>
+          <p className="text-sm mb-8 max-w-sm" style={{ color: 'var(--text-muted)' }}>
+            Caricatures, commissions, and celebrity encounters — 30 years of artistry in one place.
+          </p>
+          <Link href="/gallery" className="btn-gold">
+            Browse the Gallery <ArrowRight size={15} />
+          </Link>
+        </div>
+        {/* floating artwork images */}
+        <Floating sensitivity={-1}>
+          <FloatingElement depth={0.5} className="top-[6%] left-[4%]">
+            <Image src="/TommyCopyright20251216_174543.jpg" alt="Tommy Lee" width={168} height={224} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          </FloatingElement>
+          <FloatingElement depth={1} className="top-[4%] left-[21%]">
+            <Image src="/CharlotteHawkins.Copyright.jpg" alt="Charlotte Hawkins" width={140} height={190} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          </FloatingElement>
+          <FloatingElement depth={2} className="top-[2%] left-[61%]">
+            <Image src="/RishiCopyright.jpg" alt="Rishi Sunak" width={176} height={232} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          </FloatingElement>
+          <FloatingElement depth={1} className="top-[5%] left-[80%]">
+            <Image src="/DalaiCopyright%20(1).jpg" alt="Dalai Lama" width={152} height={200} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          </FloatingElement>
+          <FloatingElement depth={1.5} className="top-[38%] left-[1%]">
+            <Image src="/JonSnow.Copyright.jpg" alt="Jon Snow" width={160} height={210} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          </FloatingElement>
+          <FloatingElement depth={1} className="top-[32%] left-[83%]">
+            <Image src="/RockitCopyright.jpg" alt="Rock-It Beatles" width={168} height={224} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          </FloatingElement>
+          <FloatingElement depth={3} className="top-[62%] left-[7%]">
+            <Image src="/ItalyCopyright.jpg" alt="Tuscan Winemaker" width={184} height={240} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          </FloatingElement>
+          <FloatingElement depth={1} className="top-[68%] left-[74%]">
+            <Image src="/SwissCopyright.jpg" alt="Swiss Commission" width={176} height={232} className="object-cover rounded-xl shadow-2xl" style={{ border: '1px solid var(--border)' }} />
+          </FloatingElement>
+        </Floating>
+      </section>
+
       {/* ── CTA BAND ── */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0d0a04 0%, #181206 50%, #0d0a04 100%)', borderTop: '1px solid var(--border-gold)', borderBottom: '1px solid var(--border-gold)' }}>
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse at 50% 50%, rgba(201,168,76,0.06) 0%, transparent 70%)' }} />
+      <section
+        className="relative overflow-hidden"
+        style={{ borderTop: '1px solid var(--border-gold)', borderBottom: '1px solid var(--border-gold)' }}
+      >
+        {/* Etheral animated background */}
+        <div className="absolute inset-0">
+          <EtheralShadow
+            color="rgba(201, 168, 76, 0.42)"
+            animation={{ scale: 85, speed: 55 }}
+            noise={{ opacity: 0.55, scale: 1 }}
+            sizing="fill"
+          />
+        </div>
+        {/* Dark overlay so text stays readable */}
+        <div className="absolute inset-0" style={{ background: 'rgba(8,8,8,0.78)' }} />
         <div className="relative z-10 max-w-3xl mx-auto px-6 sm:px-10 py-24 text-center">
           <h2 className="mb-5" style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.8rem, 3vw, 2.8rem)', color: 'var(--text)' }}>
             Ready to Make Your Event <em className="not-italic gradient-text">Unforgettable?</em>

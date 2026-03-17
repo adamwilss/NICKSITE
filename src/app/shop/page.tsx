@@ -10,6 +10,7 @@ import {
   Send,
   ChevronDown,
 } from 'lucide-react';
+import { Component as EtheralShadow } from '@/components/ui/etheral-shadow';
 
 const products = [
   {
@@ -371,8 +372,17 @@ export default function ShopPage() {
   return (
     <>
       {/* Page Header */}
-      <section className="page-header">
-        <div className="max-w-4xl mx-auto px-6 sm:px-10 text-center">
+      <section className="page-header" style={{ background: 'var(--bg)' }}>
+        <div className="absolute inset-0 pointer-events-none">
+          <EtheralShadow
+            color="rgba(201, 168, 76, 0.22)"
+            animation={{ scale: 70, speed: 40 }}
+            noise={{ opacity: 0.35, scale: 1 }}
+            sizing="fill"
+          />
+        </div>
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(180deg, rgba(8,8,8,0.55) 0%, var(--bg) 100%)' }} />
+        <div className="max-w-4xl mx-auto px-6 sm:px-10 text-center relative z-10">
           <div className="section-label mb-4">Services & Commissions</div>
           <h1
             style={{
