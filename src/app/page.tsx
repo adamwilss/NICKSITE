@@ -322,19 +322,23 @@ export default function HomePage() {
             >
               {[...trustedBy, ...trustedBy].map((brand, i) =>
                 brand.logo ? (
-                  <Image
+                  /* grayscale(1) normalises colour, invert(1) flips so white bg → black,
+                     mix-blend-mode:screen then makes that black bg invisible against the
+                     dark page, leaving only the logo shape visible as white. */
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
                     key={i}
                     src={brand.logo}
                     alt={brand.name}
-                    width={120}
-                    height={40}
-                    className="object-contain shrink-0"
                     style={{
                       height: '34px',
                       width: 'auto',
-                      maxWidth: '110px',
-                      filter: 'brightness(0) invert(1)',
-                      opacity: 0.55,
+                      maxWidth: '120px',
+                      objectFit: 'contain',
+                      flexShrink: 0,
+                      filter: 'grayscale(1) invert(1)',
+                      mixBlendMode: 'screen',
+                      opacity: 0.6,
                     }}
                   />
                 ) : (
